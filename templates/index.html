@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Machine Failure Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Machine Failure Prediction System</h1>
+
+    <form action="/predict" method="POST">
+
+        <input type="number" step="any" name="air_temp" placeholder="Air Temperature (K)" required>
+
+        <input type="number" step="any" name="process_temp" placeholder="Process Temperature (K)" required>
+
+        <input type="number" step="any" name="rot_speed" placeholder="Rotational Speed (rpm)" required>
+
+        <input type="number" step="any" name="torque" placeholder="Torque (Nm)" required>
+
+        <input type="number" step="any" name="tool_wear" placeholder="Tool Wear (min)" required>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

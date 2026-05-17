@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>{{ status }}</h1>
+
+    <h2>Failure Type:</h2>
+
+    <h3>{{ prediction }}</h3>
+
+    {% if exceeded %}
+
+        <h2>Parameters Causing Failure:</h2>
+
+        <ul>
+            {% for item in exceeded %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+
+        <h3>All Parameters are within Safe Limits</h3>
+
+    {% endif %}
+
+    <a href="/">Go Back</a>
+
+</div>
+
+</body>
+</html>
